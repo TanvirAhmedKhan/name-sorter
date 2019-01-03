@@ -80,10 +80,11 @@
           "Microsoft.TestPlatform.TestHost": "15.7.0"
         },
         "build": {
-          "build/netcoreapp1.0/_._": {}
+          "build/netcoreapp1.0/Microsoft.Net.Test.Sdk.props": {},
+          "build/netcoreapp1.0/Microsoft.Net.Test.Sdk.targets": {}
         },
         "buildMultiTargeting": {
-          "buildMultiTargeting/_._": {}
+          "buildMultiTargeting/Microsoft.Net.Test.Sdk.props": {}
         }
       },
       "Microsoft.NETCore.App/2.0.0": {
@@ -1632,10 +1633,12 @@
           "xunit.extensibility.execution": "[2.3.1]"
         },
         "build": {
-          "build/_._": {}
+          "build/xunit.core.props": {},
+          "build/xunit.core.targets": {}
         },
         "buildMultiTargeting": {
-          "buildMultiTargeting/_._": {}
+          "buildMultiTargeting/xunit.core.props": {},
+          "buildMultiTargeting/xunit.core.targets": {}
         }
       },
       "xunit.extensibility.core/2.3.1": {
@@ -1670,23 +1673,7 @@
           "Microsoft.NET.Test.Sdk": "15.0.0"
         },
         "build": {
-          "build/netcoreapp1.0/_._": {}
-        }
-      },
-      "UnitTestProjectForNameSorter/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.0",
-        "dependencies": {
-          "Microsoft.NET.Test.Sdk": "15.7.0",
-          "Microsoft.NETCore.App": "2.0.0",
-          "xunit": "2.3.1",
-          "xunit.runner.visualstudio": "2.3.1"
-        },
-        "compile": {
-          "bin/placeholder/UnitTestProjectForNameSorter.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/UnitTestProjectForNameSorter.dll": {}
+          "build/netcoreapp1.0/xunit.runner.visualstudio.props": {}
         }
       }
     }
@@ -5723,17 +5710,14 @@
         "xunit.runner.visualstudio.2.3.1.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
-    },
-    "UnitTestProjectForNameSorter/1.0.0": {
-      "type": "project",
-      "path": "../UnitTestProjectForNameSorter/UnitTestProjectForNameSorter.csproj",
-      "msbuildProject": "../UnitTestProjectForNameSorter/UnitTestProjectForNameSorter.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
+      "Microsoft.NET.Test.Sdk >= 15.7.0",
       "Microsoft.NETCore.App >= 2.0.0",
-      "UnitTestProjectForNameSorter >= 1.0.0"
+      "xunit >= 2.3.1",
+      "xunit.runner.visualstudio >= 2.3.1"
     ]
   },
   "packageFolders": {
@@ -5743,11 +5727,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Tanvir & Priya\\source\\repos\\NameSorterApp\\NameSorterApp\\NameSorterApp.csproj",
-      "projectName": "NameSorterApp",
-      "projectPath": "C:\\Users\\Tanvir & Priya\\source\\repos\\NameSorterApp\\NameSorterApp\\NameSorterApp.csproj",
+      "projectUniqueName": "C:\\Users\\Tanvir & Priya\\source\\repos\\NameSorterApp\\UnitTestProjectForNameSorter\\UnitTestProjectForNameSorter.csproj",
+      "projectName": "UnitTestProjectForNameSorter",
+      "projectPath": "C:\\Users\\Tanvir & Priya\\source\\repos\\NameSorterApp\\UnitTestProjectForNameSorter\\UnitTestProjectForNameSorter.csproj",
       "packagesPath": "C:\\Users\\Tanvir & Priya\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Tanvir & Priya\\source\\repos\\NameSorterApp\\NameSorterApp\\obj\\",
+      "outputPath": "C:\\Users\\Tanvir & Priya\\source\\repos\\NameSorterApp\\UnitTestProjectForNameSorter\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5765,11 +5749,7 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "projectReferences": {
-            "C:\\Users\\Tanvir & Priya\\source\\repos\\NameSorterApp\\UnitTestProjectForNameSorter\\UnitTestProjectForNameSorter.csproj": {
-              "projectPath": "C:\\Users\\Tanvir & Priya\\source\\repos\\NameSorterApp\\UnitTestProjectForNameSorter\\UnitTestProjectForNameSorter.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -5781,10 +5761,22 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
+          "Microsoft.NET.Test.Sdk": {
+            "target": "Package",
+            "version": "[15.7.0, )"
+          },
           "Microsoft.NETCore.App": {
             "target": "Package",
             "version": "[2.0.0, )",
             "autoReferenced": true
+          },
+          "xunit": {
+            "target": "Package",
+            "version": "[2.3.1, )"
+          },
+          "xunit.runner.visualstudio": {
+            "target": "Package",
+            "version": "[2.3.1, )"
           }
         },
         "imports": [
