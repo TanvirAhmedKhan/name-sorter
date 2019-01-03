@@ -1675,6 +1675,19 @@
         "build": {
           "build/netcoreapp1.0/xunit.runner.visualstudio.props": {}
         }
+      },
+      "NameSorterApp/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "Microsoft.NETCore.App": "2.0.0"
+        },
+        "compile": {
+          "bin/placeholder/NameSorterApp.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NameSorterApp.dll": {}
+        }
       }
     }
   },
@@ -5710,12 +5723,18 @@
         "xunit.runner.visualstudio.2.3.1.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "NameSorterApp/1.0.0": {
+      "type": "project",
+      "path": "../NameSorterApp/NameSorterApp.csproj",
+      "msbuildProject": "../NameSorterApp/NameSorterApp.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
       "Microsoft.NET.Test.Sdk >= 15.7.0",
       "Microsoft.NETCore.App >= 2.0.0",
+      "NameSorterApp >= 1.0.0",
       "xunit >= 2.3.1",
       "xunit.runner.visualstudio >= 2.3.1"
     ]
@@ -5749,7 +5768,11 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Tanvir & Priya\\source\\repos\\NameSorterApp\\NameSorterApp\\NameSorterApp.csproj": {
+              "projectPath": "C:\\Users\\Tanvir & Priya\\source\\repos\\NameSorterApp\\NameSorterApp\\NameSorterApp.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

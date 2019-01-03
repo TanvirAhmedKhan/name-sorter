@@ -6,16 +6,14 @@ using System.Text;
 
 namespace NameSorterApp
 {
-    class NameSorter : ISorter
+    public class NameSorter : ISorter
     {
         List<Person> list = new List<Person>();
         private string inputFilePath, outputFilePath;
 
         public NameSorter(string input, string output)
         {
-           // inputFilePath = input;
             inputFilePath = Path.Combine(Environment.CurrentDirectory, input);
-          //  outputFilePath = output;
             outputFilePath = Path.Combine(Environment.CurrentDirectory, output);
         }
 
@@ -54,9 +52,32 @@ namespace NameSorterApp
                         fs.Write(info, 0, info.Length);
                         fs.Write(newline, 0, newline.Length);
                     }
-                         
+
                 }
             }
+        }
+
+        void ISorter.printOutputList()
+        {
+            Console.WriteLine("----------------------------------------");
+            if (File.Exists(outputFilePath))
+            {
+                string[] sortedList = System.IO.File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, outputFilePath));
+                if (sortedList.Length == 0)
+                {
+                    Console.WriteLine("The file is empty");
+                }
+                else
+                {
+                    foreach (string fullName in sortedList)
+                        Console.WriteLine(fullName);
+                }
+            }
+            else
+            {
+                Console.WriteLine("The ouput file does not exist.");
+            }
+            Console.WriteLine("----------------------------------------");
         }
     }
 }
