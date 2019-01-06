@@ -12,7 +12,7 @@ namespace UnitTestProjectForNameSorter
             string input = "../../../unsorted-names-list.txt";
             string output = "Test-ouput.txt";
             ISorter GlobalXNameSorter = new NameSorter(input, output);
-            GlobalXNameSorter.sort();
+            GlobalXNameSorter.Sort();
         }
 
         [Fact]
@@ -21,8 +21,8 @@ namespace UnitTestProjectForNameSorter
             string input = "../../../unsorted-names-list.txt";
             string output = "Test-ouput.txt";
             ISorter GlobalXNameSorter = new NameSorter(input, output);
-            GlobalXNameSorter.sort();
-            GlobalXNameSorter.printOutputList();
+            GlobalXNameSorter.Sort();
+            GlobalXNameSorter.PrintOutputList();
         }
     }
 }

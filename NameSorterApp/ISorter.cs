@@ -6,7 +6,7 @@ namespace NameSorterApp
 {
     public interface ISorter
     {
-        void sort();
-        void printOutputList();
+        void Sort();
+        void PrintOutputList();
     }
 }

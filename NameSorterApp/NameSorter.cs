@@ -17,7 +17,12 @@ namespace NameSorterApp
             outputFilePath = Path.Combine(Environment.CurrentDirectory, output);
         }
 
-        void ISorter.sort()
+        //Assuming a person can have long given names and a signle last name
+        //Example: 
+        //Given Name: Tanvir Ahmed
+        //Last  Name: Khan
+
+        void ISorter.Sort()
         {
             if (!File.Exists(inputFilePath))
             {
@@ -57,7 +62,7 @@ namespace NameSorterApp
             }
         }
 
-        void ISorter.printOutputList()
+        void ISorter.PrintOutputList()
         {
             Console.WriteLine("----------------------------------------");
             if (File.Exists(outputFilePath))

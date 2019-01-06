@@ -9,11 +9,20 @@ namespace NameSorterApp
     {
         static void Main(string[] args)
         {
-            string inputFilePath = "../../../unsorted-names-list.txt";
+            string inputFilePath = "unsorted-names-list.txt";
             string outputFilePath = "sorted-names-list.txt";
-            ISorter GlobalXNameSorter = new NameSorter(inputFilePath, outputFilePath);
-            GlobalXNameSorter.sort();
-            GlobalXNameSorter.printOutputList();
+            if (args.Length == 1)
+            {
+                ISorter GlobalXNameSorter = new NameSorter(args[0], outputFilePath);
+                GlobalXNameSorter.Sort();
+                GlobalXNameSorter.PrintOutputList();
+            }
+            else
+            {
+                ISorter GlobalXNameSorter = new NameSorter(inputFilePath, outputFilePath);
+                GlobalXNameSorter.Sort();
+                GlobalXNameSorter.PrintOutputList();
+            }
             Console.ReadKey(true);
         }
     }
